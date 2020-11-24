@@ -35,7 +35,7 @@ namespace ExpenseManager{
             var expense = _expenseList.Find(x => x.ItemId == id);
 
             if (expense == null) {
-                throw new Exception($"Item {id} does not exist!!");
+                throw new Exception($"Item {id} does not exist in GetById()!!");
             }
 
             return expense;

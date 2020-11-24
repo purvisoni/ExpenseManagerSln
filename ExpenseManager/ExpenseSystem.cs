@@ -43,8 +43,10 @@ namespace ExpenseManager
         }
 
         public void UpdateEachExpense(Guid id,double amount){
+            //Console.WriteLine($"GUID item id is{id}");
+            //Console.WriteLine($"Amount is{amount}");
             var expense = _expenseStorage.GetById(id);
-
+            
             if (expense == null) {
                 throw new Exception($"Item {id} does not exist!!");
             }

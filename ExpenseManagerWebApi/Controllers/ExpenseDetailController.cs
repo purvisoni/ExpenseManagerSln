@@ -21,7 +21,6 @@ namespace ExpenseManagerWebApi.Controllers
         {
             List<ExpenseDetail> results = _theExpenseSystem.ViewAllExpense();
             return results;
-            //return new List<ExpenseDetail>();
         }
 
         [HttpPost]
@@ -29,6 +28,20 @@ namespace ExpenseManagerWebApi.Controllers
         {
             _theExpenseSystem.AddNewExpense(expense);
             return "expense added successfully";
+        }
+
+        [HttpPut]
+        public string UpdateExpense(Guid id, Double amount)
+        {
+            _theExpenseSystem.UpdateEachExpense(id,amount);
+            return "expense updated successfully";
+        }
+
+        [HttpDelete]
+        public string DeleteExpense(Guid id)
+        {
+            _theExpenseSystem.DeleteEachExpense(id);
+            return "expense deleted successfully";
         }
     }
 }
